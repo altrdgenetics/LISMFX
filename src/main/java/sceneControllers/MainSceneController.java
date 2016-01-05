@@ -7,7 +7,9 @@ package sceneControllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
 import util.Global;
 
 /**
@@ -18,6 +20,10 @@ import util.Global;
 public class MainSceneController implements Initializable {
 
     Global global;
+    
+    @FXML
+    private TextArea mainTextArea;
+    
     
     /**
      * Initializes the controller class.
@@ -31,6 +37,34 @@ public class MainSceneController implements Initializable {
     
     public void setDefaults(Global globalPassed) {
         global = globalPassed;
+    }
+
+    @FXML
+    private void menuItemClearText() {
+        
+    }
+    
+    @FXML
+    private void menuItemPreferences() {
+        
+    }
+    
+    @FXML
+    private void menuItemForceExit() {
+        
+    }
+    
+    @FXML
+    private void menuItemExit() {
+        
+    }
+    
+    public TextArea getMainTextArea() {
+        return mainTextArea;
+    }
+
+    public void setMainTextArea(TextArea mainTextArea) {
+        this.mainTextArea = mainTextArea;
     }
     
 }

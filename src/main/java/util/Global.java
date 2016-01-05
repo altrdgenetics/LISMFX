@@ -50,7 +50,7 @@ public class Global {
     
     //JFX
     public Parent root;    
-    public Stage  mainStage = new Stage();
+    public Stage  mainStage;
     public DialogStageLauncher launcher;
     
     //Other Defaults
@@ -114,6 +114,6 @@ public class Global {
      * panel.
      */
     public static void indexPanelPrintOut(Global global, String text) {
-//        global.mainPanel.getjTextArea1().append(text);
+        global.mainPanel.getMainTextArea().appendText(text);
     }
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="957.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="sceneControllers.MainSceneController">
+<AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="957.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sceneControllers.MainSceneController">
     <stylesheets>
         <URL value="@/styles/Styles.css" />
     </stylesheets>
@@ -18,7 +18,7 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <center>
-                  <TextArea prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <TextArea fx:id="mainTextArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="15.0" right="15.0" top="15.0" />
                      </BorderPane.margin>
@@ -41,11 +41,16 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Preferences" />
-                        <MenuItem mnemonicParsing="false" text="Force Close" />
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#menuItemForceExit" text="Force Close" />
+                    <MenuItem mnemonicParsing="false" onAction="#menuItemExit" text="Close" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#menuItemClearText" text="Cear Text" />
+                        <MenuItem mnemonicParsing="false" onAction="#menuItemPreferences" text="Preferences" />
+                     </items>
+                  </Menu>
               </menus>
             </MenuBar>
          </top>

@@ -5,6 +5,7 @@
  */
 package sceneControllers;
 
+import indexer.ThreadIndexing;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -41,7 +42,7 @@ public class MainSceneController implements Initializable {
 
     @FXML
     private void menuItemClearText() {
-        
+        mainTextArea.clear();
     }
     
     @FXML
@@ -57,6 +58,21 @@ public class MainSceneController implements Initializable {
     @FXML
     private void menuItemExit() {
         
+    }
+    
+    /**
+     * The thread for in indexing. Separating it out allows for the updating of 
+     * the AWT elements so we can duplicate the console text.
+     */
+    private void runIndexThread() {
+        global.threadOne = new Thread() {
+            @Override
+            public void run() {
+                ThreadIndexing ixd = new ThreadIndexing();
+                ixd.IndexThread(global);
+            }
+        };
+        global.threadOne.start();
     }
     
     public TextArea getMainTextArea() {

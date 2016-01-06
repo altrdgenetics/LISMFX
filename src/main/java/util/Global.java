@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import sceneControllers.MainSceneController;
 
@@ -22,41 +23,42 @@ import sceneControllers.MainSceneController;
  */
 public class Global {
     //INI Information
-    boolean mergeCapable    = false;
-    boolean newIndex        = false;
-    double RAM_BUFFER_SIZE  = 1024.0;
-    int dayOfWeek           = Calendar.FRIDAY;
-    int hourOfDay           = 20;
-    int MAX_BUFFERED_DOCS   = 10;
-    int MERGE_FACTOR        = 100;
-    int NUM_THREADS         = 1;
-    int THREAD_SLEEP        = 600000;
-    int WRITE_LIMIT         = 1000000000;
-    String dataDir          = null;
-    String indexDir         = null;
+    public boolean mergeCapable    = false;
+    public boolean newIndex        = false;
+    public double RAM_BUFFER_SIZE  = 1024.0;
+    public int dayOfWeek           = Calendar.FRIDAY;
+    public int hourOfDay           = 20;
+    public int MAX_BUFFERED_DOCS   = 10;
+    public int MERGE_FACTOR        = 100;
+    public int NUM_THREADS         = 1;
+    public int THREAD_SLEEP        = 600000;
+    public int WRITE_LIMIT         = 1000000000;
+    public String dataDir          = null;
+    public String indexDir         = null;
     
     //System Flags for Indexing
-    boolean executorRunning = false;
-    boolean exitNow         = false;
-    boolean forceExit       = false;
-    boolean lockIndex       = false;
-    boolean merge           = false;
-    Date lastIndexTime      = null;
+    public boolean executorRunning = false;
+    public boolean exitNow         = false;
+    public boolean forceExit       = false;
+    public boolean lockIndex       = false;
+    public boolean merge           = false;
+    public Date lastIndexTime      = null;
     
     //Items for the Tray
-    boolean trayActive      = false;
-    SystemTray tray;
-    TrayIcon trayIcon;
+    public boolean trayActive      = false;
+    public SystemTray tray;
+    public TrayIcon trayIcon;
     
     //JFX
     public Parent root;    
     public Stage  mainStage;
     public DialogStageLauncher launcher;
+    public Image logoImage;
     
     //Other Defaults
-    Thread threadOne, threadTwo;
-    MainSceneController mainPanel;
-    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss a");
+    public Thread threadOne, threadTwo;
+    public MainSceneController mainPanel;
+    public SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss a");
     
     /**
      * Links up the main panel for access across the application

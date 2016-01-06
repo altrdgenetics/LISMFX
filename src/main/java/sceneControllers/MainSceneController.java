@@ -5,12 +5,17 @@
  */
 package sceneControllers;
 
+import indexer.LuceneIndexer;
+import indexer.ThreadIndexing;
+import indexer.ThreadMergeScheduler;
+import java.awt.Image;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import util.Global;
+import util.ParseTime;
 
 /**
  * FXML Controller class
@@ -20,6 +25,7 @@ import util.Global;
 public class MainSceneController implements Initializable {
 
     Global global;
+    Image image;
     
     @FXML
     private TextArea mainTextArea;
@@ -37,11 +43,20 @@ public class MainSceneController implements Initializable {
     
     public void setDefaults(Global globalPassed) {
         global = globalPassed;
-    }
-
+        
+        //SET IMAGE AND ICON        
+        //NEED TRAY ICON
+        
+        
+        
+//        lastIndexTime();
+//        runMergeTimerThread();
+//        runIndexThread();
+    }   
+    
     @FXML
     private void menuItemClearText() {
-        
+        mainTextArea.clear();
     }
     
     @FXML
@@ -51,12 +66,73 @@ public class MainSceneController implements Initializable {
     
     @FXML
     private void menuItemForceExit() {
-        
+        global.forceExit = true;
+        if (global.executorRunning == true){
+            LuceneIndexer.kill();
+        }
+        System.err.println("EXIT NOW!");
+        exitApplication();
     }
     
     @FXML
     private void menuItemExit() {
-        
+        exitApplication();
+    }
+    
+    
+    /**
+     * Exit the Application as long as the index is not locked
+     */
+    private void exitApplication() {
+        if (global.lockIndex == false) {
+            System.exit(0);
+        } else {
+            global.exitNow = true;
+        }
+    }
+    
+    /**
+     * If we are just updating the index and not creating a new one we pull the 
+     * last time the index was ran if the application was closed out. That way
+     * we can limit the amount of files that need to be index.
+     */
+    private void lastIndexTime(){
+        if (global.newIndex == false){
+            ParseTime connectionIni = new ParseTime();
+            global.lastIndexTime = connectionIni.getLastIndexTime();
+        }
+    }  
+    
+    /**
+     * When the INI flag is set to allow merging this sets the timer so we can
+     * merge when the Day of the week and hour allows us to do so.
+     */
+    private void runMergeTimerThread() {
+        if (global.mergeCapable == true){
+        global.threadTwo = new Thread() {
+            @Override
+            public void run() {
+                ThreadMergeScheduler mrg = new ThreadMergeScheduler();
+                mrg.MergeThread(global);
+            }
+        };
+        global.threadTwo.start();
+        }
+    }
+    
+    /**
+     * The thread for in indexing. Separating it out allows for the updating of 
+     * the AWT elements so we can duplicate the console text.
+     */
+    private void runIndexThread() {
+        global.threadOne = new Thread() {
+            @Override
+            public void run() {
+                ThreadIndexing ixd = new ThreadIndexing();
+                ixd.IndexThread(global);
+            }
+        };
+        global.threadOne.start();
     }
     
     public TextArea getMainTextArea() {

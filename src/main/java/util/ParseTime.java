@@ -35,6 +35,7 @@ public class ParseTime {
                 if(line.startsWith("time =")) {
         // Time in long format
                     lastIndexTime = new Date(Long.parseLong(line.substring(line.indexOf("\"")+1, line.lastIndexOf("\""))));
+                    System.out.println("Last Index Time: " + lastIndexTime);
                 }
             }
         } catch (FileNotFoundException ex) {

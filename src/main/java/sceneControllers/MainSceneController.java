@@ -8,7 +8,6 @@ package sceneControllers;
 import indexer.LuceneIndexer;
 import indexer.ThreadIndexing;
 import indexer.ThreadMergeScheduler;
-import java.awt.Image;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -25,7 +24,6 @@ import util.ParseTime;
 public class MainSceneController implements Initializable {
 
     Global global;
-    Image image;
     
     @FXML
     private TextArea mainTextArea;
@@ -42,16 +40,12 @@ public class MainSceneController implements Initializable {
     }    
     
     public void setDefaults(Global globalPassed) {
-        global = globalPassed;
-        
-        //SET IMAGE AND ICON        
-        //NEED TRAY ICON
-        
-        
-        
-//        lastIndexTime();
-//        runMergeTimerThread();
-//        runIndexThread();
+        global = globalPassed;     
+        global.mainPanel = this;
+        //NEED TRAY ICON        
+        lastIndexTime();
+        runMergeTimerThread();
+        runIndexThread();
     }   
     
     @FXML

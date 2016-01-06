@@ -38,9 +38,9 @@ public class ThreadIndexing {
                     //Printout the sleep information
                     System.out.println("Sleeping for: " + TimeUnit.MILLISECONDS.toMinutes(global.THREAD_SLEEP) + "min");
                     if (indexGUI){
-                        global.mainPanel.getMainTextArea().appendText("\n\n");
-                        global.mainPanel.getMainTextArea().appendText("Sleeping for: " + TimeUnit.MILLISECONDS.toMinutes(global.THREAD_SLEEP) + "min");
-                        global.mainPanel.getMainTextArea().appendText("\n\n\n\n");
+                        Global.indexPanelPrintOut(global, "\n\n");
+                        Global.indexPanelPrintOut(global, "Sleeping for: " + TimeUnit.MILLISECONDS.toMinutes(global.THREAD_SLEEP) + "min");
+                        Global.indexPanelPrintOut(global, "\n\n\n\n");
                     }
                     //unlock the application
                     global.lockIndex = false;

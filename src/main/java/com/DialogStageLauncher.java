@@ -9,6 +9,7 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import sceneControllers.*;
 import util.Exceptions;
@@ -21,6 +22,8 @@ import util.Global;
 public class DialogStageLauncher {
     public void MainScene(Global global, Stage stage) {
         global.mainStage = stage;
+        global.logoImage = new Image(getClass().getResourceAsStream("/images/image.png"));
+        stage.getIcons().add(global.logoImage);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/MainScene.fxml"));
             global.root = (Parent)fxmlLoader.load();

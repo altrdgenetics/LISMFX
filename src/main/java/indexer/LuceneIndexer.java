@@ -316,11 +316,11 @@ public class LuceneIndexer {
 
         @Override
         public void run() {
-            try {
-                LuceneIndexerAddDocument.indexDoc(writer, path, attrs, global, indexPanel);
-            } catch (IOException ex) {
-                Logger.getLogger(LuceneIndexer.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//            try {
+//                LuceneIndexerAddDocument.indexDoc(writer, path, attrs, global, indexPanel);
+//            } catch (IOException ex) {
+//                Logger.getLogger(LuceneIndexer.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
     }
 

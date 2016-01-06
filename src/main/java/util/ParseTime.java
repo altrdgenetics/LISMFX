@@ -21,8 +21,7 @@ public class ParseTime {
     
     private Date lastIndexTime;
     private File timeFile = new File("time.txt");
-    
-    
+        
     /**
      * Grabs the information in time format for the last time the index was ran
      */

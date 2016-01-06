@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import sceneControllers.MainSceneController;
 
@@ -52,6 +53,7 @@ public class Global {
     public Parent root;    
     public Stage  mainStage;
     public DialogStageLauncher launcher;
+    public Image logoImage;
     
     //Other Defaults
     public Thread threadOne, threadTwo;

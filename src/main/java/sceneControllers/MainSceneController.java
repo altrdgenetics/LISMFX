@@ -55,7 +55,7 @@ public class MainSceneController implements Initializable {
     
     @FXML
     private void menuItemPreferences() {
-        
+        global.launcher.TicketArchiveScene(global);
     }
     
     @FXML

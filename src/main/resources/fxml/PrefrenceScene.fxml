@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sceneControllers.PrefrenceSceneController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="682.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Label text="Preferences" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="132.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="438.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Index Directory:" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Data Directory:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Create New Index:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Number of Threads:" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="RAM Buffer:" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Thread Sleep:" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Write Limit:" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Max Buffered Docs:" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Merge Factor:" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Merge:" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Merge Day:" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Merge Hour:" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="IndexDirectoryTextField" GridPane.columnIndex="1" />
+                  <TextField fx:id="DataDirectoryTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="NumberOfThreadsTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="RAMBufferTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="ThreadSleepTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="WriteLimitTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="MaxBufferedDocsTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="MergeFactorTextField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="DayTextField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="HourTextField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <CheckBox fx:id="CreateNewIndexCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <CheckBox fx:id="MergeCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </center>
+         <bottom>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#closeScene" text="Close" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

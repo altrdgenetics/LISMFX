@@ -116,6 +116,6 @@ public class Global {
      * panel.
      */
     public static void indexPanelPrintOut(Global global, String text) {
-        global.mainPanel.getMainTextArea().appendText(text);
+//        global.mainPanel.getMainTextArea().appendText(text);
     }
 }

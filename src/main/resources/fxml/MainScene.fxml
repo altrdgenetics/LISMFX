@@ -18,7 +18,7 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <center>
-                  <TextArea fx:id="mainTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <TextArea fx:id="mainTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="15.0" right="15.0" top="15.0" />
                      </BorderPane.margin>
@@ -45,7 +45,7 @@
                     <MenuItem mnemonicParsing="false" onAction="#menuItemExit" text="Close" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="File">
+                  <Menu mnemonicParsing="false" text="Option">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#menuItemClearText" text="Cear Text" />
                         <MenuItem mnemonicParsing="false" onAction="#menuItemPreferences" text="Preferences" />
